@@ -52,15 +52,16 @@ for anime in all_animes:
         'favorites': anime['favorites'], 
         'synopsis': anime['synopsis'], 
         'season': anime['season'], 
-        'year': anime['year'], 
-        'year_2':anime['aired']['prop']['from']['year'], # Hoping to get the year and month correctly from using this (Since there are some nulls)
+        'year':anime['aired']['prop']['from']['year'],
         'month': anime['aired']['prop']['from']['month'],
+        'day': anime['aired']['prop']['from']['day'],
         'licensors': [licensor['name'] for licensor in anime['licensors']], 
         'producers': [producer['name'] for producer in anime['producers']], 
         'studios': [studio['name'] for studio in anime['studios']], 
         'genres':[ genre['name'] for  genre in anime['genres']], 
         'explict_genres': [ genre['name'] for  genre in anime['explicit_genres']], 
-        'themes': [theme['name'] for theme in anime['themes']] 
+        'themes': [theme['name'] for theme in anime['themes']],
+        'demographics': [demographic['name'] for demographic in anime['demographics']]
     }
 
     all_animes_rows.append(row)
